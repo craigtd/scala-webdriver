@@ -8,4 +8,6 @@ object HomePage extends RestfulBookerPage {
 
   def clickOnLogin = click on linkText("Login")
 
+  def logout = eventually { click on "logout" }
+
 }

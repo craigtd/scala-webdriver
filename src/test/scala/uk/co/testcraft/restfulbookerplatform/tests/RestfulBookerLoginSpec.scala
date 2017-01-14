@@ -1,6 +1,5 @@
 package uk.co.testcraft.restfulbookerplatform.tests
 
-import org.openqa.selenium.By
 import uk.co.testcraft.restfulbookerplatform.flows.Login
 import uk.co.testcraft.restfulbookerplatform.pages.HomePage
 
@@ -15,8 +14,6 @@ class RestfulBookerLoginSpec extends BaseFeatureSpec {
 
       When("I click on the Login link")
       HomePage.clickOnLogin
-      Thread.sleep(1000)
-
 
       And("And I provide admin user credentials")
       Login.enterDetails("admin", "password")
@@ -24,20 +21,12 @@ class RestfulBookerLoginSpec extends BaseFeatureSpec {
       When("I click on the Login button")
       Login.clickLogin
 
-      Then("I can access the hotel booking system")
-      Thread.sleep(1000)
+      Then("I am logged into the hotel booking system and can log out again")
+      HomePage.logout
 
-      //  def createHotelButton = driver.findElement(By.id("createHotel"))
-//      assert(createHotelButton.isEnabled)
-
-      Thread.sleep(3000)
       quit
     }
 
   }
-
-
-
-
 
 }

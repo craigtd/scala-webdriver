@@ -6,6 +6,6 @@ trait LoginModal extends WebPage {
 
   def username: TextField = textField("username")
   def password: PasswordField = pwdField("password")
-  def loginButton: TextField = textField("doLogin")
+  def loginButton: TextArea = textArea("doLogin")
 
 }
