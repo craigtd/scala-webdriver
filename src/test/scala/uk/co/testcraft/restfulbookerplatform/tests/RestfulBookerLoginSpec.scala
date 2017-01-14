@@ -22,6 +22,7 @@ class RestfulBookerLoginSpec extends BaseFeatureSpec {
       When("I click on the Login button")
       Login.clickLogin
 
+      // Only here to allow visual check on the tests - Chrome runs too quick. Plan to introduce means of setting the browser window visible
       Thread.sleep(10000)
 
       Then("I am logged into the hotel booking system and can log out again")
