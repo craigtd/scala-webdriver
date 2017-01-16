@@ -12,10 +12,8 @@ class Driver {
 
   private var instance: WebDriver = null
 
-
   def getInstance(): WebDriver = {
     if (instance == null) {
-
       initialiseBrowser()
     }
     instance
@@ -43,6 +41,7 @@ class Driver {
       case "chrome" => createChromeDriver
       case _ => throw new IllegalArgumentException(s"Browser type ${settings.BROWSER} not recognised")
     }
+
   }
 
 }

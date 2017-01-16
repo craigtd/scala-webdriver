@@ -1,7 +1,7 @@
 package uk.co.testcraft.restfulbookerplatform.tests
 
-import uk.co.testcraft.restfulbookerplatform.flows.Login
 import uk.co.testcraft.restfulbookerplatform.pages.HomePage
+import uk.co.testcraft.restfulbookerplatform.pages.LoginModal
 import uk.co.testcraft.restfulbookerplatform.tags.SmokeTest
 
 class RestfulBookerLoginSpec extends BaseFeatureSpec {
@@ -17,13 +17,13 @@ class RestfulBookerLoginSpec extends BaseFeatureSpec {
       HomePage.clickOnLogin
 
       And("And I provide admin user credentials")
-      Login.enterDetails("admin", "password")
+      LoginModal.enterLoginDetails("admin", "password")
 
       When("I click on the Login button")
-      Login.clickLogin
+      LoginModal.submitLoginDetails
 
       // Only here to allow visual check on the tests - Chrome runs too quick. Plan to introduce means of setting the browser window visible
-      Thread.sleep(10000)
+//      Thread.sleep(3000)
 
       Then("I am logged into the hotel booking system and can log out again")
       HomePage.logout
