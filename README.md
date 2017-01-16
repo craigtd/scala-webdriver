@@ -2,13 +2,7 @@
 
 Basic template for implementing ScalaTest with Selenium WebDriver
 
-Run via the command
-
-```./run_local_firefox.sh```
-
-or
-
-```./run_local_chrome.sh```
+Run via the command ```./run_local_firefox.sh``` or ```./run_local_chrome.sh```
 
 Refer to the above scripts for examples of the sbt arguments used within the framework to select a test environment and browser type
 
