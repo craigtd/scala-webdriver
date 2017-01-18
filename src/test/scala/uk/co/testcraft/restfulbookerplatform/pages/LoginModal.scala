@@ -1,6 +1,7 @@
 package uk.co.testcraft.restfulbookerplatform.pages
 
 import org.scalatest.selenium.WebBrowser
+import uk.co.testcraft.restfulbookerplatform.utils.User
 
 object LoginModal extends WebBrowser with WebPage {
 
@@ -9,10 +10,10 @@ object LoginModal extends WebBrowser with WebPage {
   def username: TextField = textField( "username" )
   def password: PasswordField = pwdField( "password" )
 
-  def enterLoginDetails ( user:String, pwrd:String ) : Unit = {
+  def enterLoginDetails ( user: User ) : Unit = {
     eventually {
-      username.value = user
-      password.value = pwrd
+      username.value = user.username
+      password.value = user.password
     }
   }
 

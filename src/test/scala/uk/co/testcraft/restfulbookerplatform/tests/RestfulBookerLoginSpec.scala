@@ -3,6 +3,7 @@ package uk.co.testcraft.restfulbookerplatform.tests
 import uk.co.testcraft.restfulbookerplatform.pages.HomePage
 import uk.co.testcraft.restfulbookerplatform.pages.LoginModal
 import uk.co.testcraft.restfulbookerplatform.tags.SmokeTest
+import uk.co.testcraft.restfulbookerplatform.utils.User
 
 class RestfulBookerLoginSpec extends BaseFeatureSpec {
 
@@ -17,7 +18,7 @@ class RestfulBookerLoginSpec extends BaseFeatureSpec {
       HomePage.clickOnLogin
 
       And("And I provide admin user credentials")
-      LoginModal.enterLoginDetails("admin", "password")
+      LoginModal.enterLoginDetails(User.ADMIN_USER)
 
       When("I click on the Login button")
       LoginModal.submitLoginDetails
