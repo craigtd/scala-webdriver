@@ -4,7 +4,7 @@ import uk.co.testcraft.restfulbookerplatform.utils.Configuration
 
 object HomePage extends RestfulBookerPage {
 
-  override val url: String = Configuration.settings.url + ":3003"
+  override val url: String = Configuration.settings.url
 
   def openHomePage = go to url
 

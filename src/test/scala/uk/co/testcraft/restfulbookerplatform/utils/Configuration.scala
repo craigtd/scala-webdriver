@@ -27,7 +27,7 @@ object Configuration {
     environment match {
       case Environment.Local =>
         new Configuration(
-          url = "http://localhost"
+          url = "http://localhost:3003"
         )
       case _ => throw new IllegalArgumentException(s"Environment '$environment' not known")
     }
