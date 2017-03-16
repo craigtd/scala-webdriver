@@ -1,9 +1,8 @@
 package uk.co.testcraft.restfulbookerplatform.tests
 
-import uk.co.testcraft.restfulbookerplatform.pages.HomePage
-import uk.co.testcraft.restfulbookerplatform.pages.LoginModal
+import uk.co.testcraft.restfulbookerplatform.pages.{HomePage, LoginModal}
 import uk.co.testcraft.restfulbookerplatform.tags.SmokeTest
-import uk.co.testcraft.restfulbookerplatform.utils.User
+import uk.co.testcraft.restfulbookerplatform.utils.TestUsers
 
 class RestfulBookerLoginSpec extends BaseFeatureSpec {
 
@@ -18,18 +17,29 @@ class RestfulBookerLoginSpec extends BaseFeatureSpec {
       HomePage.clickOnLogin
 
       And("And I provide admin user credentials")
-      LoginModal.enterLoginDetails(User.ADMIN_USER)
+      LoginModal.enterLoginDetails(TestUsers.ADMIN_USER)
 
       When("I click on the Login button")
       LoginModal.submitLoginDetails
 
-      // Only here to allow visual check on the tests - Chrome runs too quick. Plan to introduce means of setting the browser window visible
-//      Thread.sleep(3000)
-
       Then("I am logged into the hotel booking system and can log out again")
       HomePage.logout
 
-      quit
+    }
+
+
+    scenario("Create a new hotel", SmokeTest) {
+      Given("I am logged in to the hotel booker site")
+      HomePage.openHomePage
+      HomePage.clickOnLogin
+      LoginModal.enterLoginDetails(TestUsers.ADMIN_USER)
+      LoginModal.submitLoginDetails
+
+      When("I create a new hotel")
+      HomePage.createHotel("Hotel Bayonne", "123 Rue de la mer","Monsieur Canard", "+44123456789", "canard@gmail.com")
+
+      Then("A new entry is created")
+      HomePage.
     }
 
   }

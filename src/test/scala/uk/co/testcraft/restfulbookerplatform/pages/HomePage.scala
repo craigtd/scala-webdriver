@@ -12,4 +12,15 @@ object HomePage extends RestfulBookerPage {
 
   def logout = eventually { click on "logout" }
 
+
+
+  def createHotel(name: String, address: String, owner: String, phone: String, email: String) = {
+    textField("hotelName").value = name
+    textField("address").value = address
+    textField("owner").value = owner
+    textField("address").value = phone
+    textField("email").value = email
+    click on "createHotel"
+  }
+
 }
