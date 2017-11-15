@@ -1,4 +1,4 @@
-name := "scala-webdriver"
+name := "scalatest-example"
 
 version := "0.0.1-SNAPSHOT"
 
